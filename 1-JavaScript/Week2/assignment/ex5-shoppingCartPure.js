@@ -18,12 +18,7 @@ it pure. Do the following:
 // ! Function under test
 function addToShoppingCart(shoppingCart, item) {
   const newCart = [...shoppingCart, item];
-
-  if (newCart.length > 3) {
-    newCart.shift();
-  }
-  return newCart;
-}
+  return newCart.slice(-3);
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
