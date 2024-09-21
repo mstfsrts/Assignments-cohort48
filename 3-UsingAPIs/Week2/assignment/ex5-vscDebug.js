@@ -16,8 +16,18 @@ async function getData(url) {
 
 function renderLaureate({ knownName, birth, death }) {
   console.log(`\nName: ${knownName.en}`);
-  console.log(`Birth: ${birth.date}, ${birth.place.locationString}`);
-  console.log(`Death: ${death.date}, ${death.place.locationString}`);
+  
+  if (birth && birth.date && birth.place && birth.place.locationString) {
+    console.log(`Birth: ${birth.date}, ${birth.place.locationString}`);
+  } else {
+    console.log('Birth information not available');
+  }
+  
+  if (death && death.date && death.place && death.place.locationString) {
+    console.log(`Death: ${death.date}, ${death.place.locationString}`);
+  } else {
+    console.log('Death information not available');
+  }
 }
 
 function renderLaureates(laureates) {

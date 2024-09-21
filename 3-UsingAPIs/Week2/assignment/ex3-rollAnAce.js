@@ -26,7 +26,6 @@ async function rollDieUntil(wantedValue) {
   }
 }
 
-// TODO refactor this function to use try/catch
 async function main() {
   try {
     const result = await rollDieUntil('ACE');
